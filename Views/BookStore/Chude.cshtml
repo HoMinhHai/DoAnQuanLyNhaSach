@@ -1,0 +1,11 @@
+﻿@model IEnumerable<CuaHangSach.Models.CHUDE>
+<div class="list-group">
+    @foreach (var item in Model)
+    {
+        <a class="list-group-item" onclick="Product(event,'topic')" href="@Url.Action("SPtheochude","BookStore", new{id=item.MaCD})">
+            @item.TenChuDe
+
+        </a>
+    }
+</div>
+

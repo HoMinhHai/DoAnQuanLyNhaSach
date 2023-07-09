@@ -1,0 +1,41 @@
+﻿@model IEnumerable<CuaHangSach.Models.SACH>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+<head>
+    <link rel="stylesheet" type="text/css" href="~/Content/templatemo_style.css" />
+    <title></title>
+</head>
+
+
+<h3>Sach theo chu de</h3>
+<div  class="row">
+    @foreach (var sach in Model)
+    {
+        <div id="box" class="col-sm-4 col-lg-4 col col-md-4 col-xl-4 col-xxl-4">
+            <div class="thumbnail">
+                <a href="@Url.Action("Details","BookStore",new{id=sach.Masach})">
+                    <img style="width:150px;height:150px" alt="@sach.Tensach" src="~/images/Hinhsanpham/@sach.Anhbia" />
+                </a>
+                <div>
+                    <br />
+                    <h4 style="text-align: left;font-size:12px; margin-left:10px">@sach.Tensach</h4>
+                </div>
+                <div class="ratings">
+                    <p class="pull-right">15 reviews</p>
+                    <p>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    }
+
+</div>
+

@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "GioHangRong";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+<style>
+    #templatemo_content #templatemo_content_left {
+        display: none;
+    }
+
+    #templatemo_content #templatemo_content_right {
+        width: 100%;
+        border: none;
+    }
+    #footer{
+        margin-top: 300px;
+    }
+    body {
+        background-color: #f1f2f6;
+    }
+</style>
+
+<p style="font-weight:bold">Giỏ hàng</p>
+
+    <p style="text-align:center">Chưa có sản phẩm trong giỏ hàng của bạn</p>
+    <a style="text-decoration: none"  href="@Url.Action("Index","BookStore")"><div style="margin: auto;width: 200px;border-radius: 10px;background-color:#00a8ff;">
+        <p style="text-align: center;color: white">Mua sắm ngay</p></div>
+    </a>
+
+

@@ -1,0 +1,14 @@
+﻿.register{
+    background: white;
+    width:500px;
+    margin:auto;
+}
+body{
+    background-image: url(/images/background_Login.jpg);
+    text-align: center
+
+}
+.dk{
+    background-color: #0984e3;
+    color: white;
+}

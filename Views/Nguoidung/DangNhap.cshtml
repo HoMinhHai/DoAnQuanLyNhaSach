@@ -1,0 +1,38 @@
+﻿
+@{
+    Layout = null;
+    <link rel="stylesheet" href="~/Content/Css2.css" />
+}
+
+<h4 style="color:red ; text-align: center">@ViewBag.ThongBao</h4>
+<div class="register">
+    <table align="center">
+        <h3>ĐĂNG NHẬP</h3>
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary(true)
+            <tr>
+                <td>Tên đăng nhập </td>
+                <td>
+                    @Html.TextBox("TenDN")
+                @ViewData["Loi1"]
+            </td>
+        </tr>
+            <tr>
+                <td>Mật khẩu</td>
+                <td>
+                    @Html.TextBox("Matkhau")
+                    @ViewData["Loi2"]
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    
+                    <input class="dk" type="submit" value="Đăng nhập" />
+                </td>
+
+            </tr>
+        }
+    </table>
+</div>

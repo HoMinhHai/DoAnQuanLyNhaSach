@@ -1,0 +1,94 @@
+﻿@model IEnumerable<CuaHangSach.Models.SACH>
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+<style>
+    
+    body{
+        background-color: #f1f2f6;
+    }
+    #templatemo_content #templatemo_content_left{
+        display: none;
+    }
+     #templatemo_content #templatemo_content_right{
+         border: none;
+         width: 100%
+     }
+    #Bag{
+        background-color: white;
+       width: 220px;
+      
+        padding:10px;
+        color: red;
+        margin: auto;
+        margin-top:10px;
+        border-radius:5%;
+        border: 1px solid red;
+       
+    }
+    #Order a {
+        text-decoration: none;
+        color: white;
+    }
+    #Bag a{
+        text-decoration: none;
+        color: red;
+    }
+    
+    
+    #Order{
+     
+        background-color: red;
+        border: 1px;
+        margin: auto;
+        width: 110px;
+         border-radius:5%;
+        padding:10px;
+        color: white;
+       margin-top:10px;
+        
+    }
+</style>
+
+
+@foreach (var sach in Model)
+{
+    <div style="border:1px; text-align:center; height: 450px; margin-left: 50px">
+        <div style="width: 380px;height:500px; margin-left:50px;float: left">
+            <img style="width:300px; height:300px" src="~/images/Hinhsanpham/@sach.Anhbia" />
+            <div id="Order" >
+                <a href="@Url.Action("ThemGiohang", "GioHang", new { @IMasach= @sach.Masach,@strUrl = Request.Url.ToString()})">Mua Ngay</a>
+            </div>
+            <div id="Bag" >
+                <span>
+                    <img style="width:40px;height: 40px" src="~/images/icon_cart.png" />
+                    <a href="@Url.Action("AddToBag", "ShoppingCard", new { id=sach.Masach})">Thêm vào giỏ hàng</a>
+                    
+                </span>
+                
+            </div>
+        </div>
+
+        <div style="float: right; margin-right: 20px;width: 500px">
+            
+            <p style="font-weight: bold;">@sach.Tensach</p>
+            <p>
+                Hình thức bìa:
+                <span style="font-weight:bold;">Bìa mềm</span>
+            </p>
+            <p style="font-size:22px; color: red;">Giá bán: @sach.Giaban VND
+            <span style="border: 1px solid; background-color: red; color: white">-50%</span>
+            </p>
+            <p>Chính sách đổi trả: Đổi trả sản phẩm trong 30 ngày</p>
+        </div>
+        
+       
+    </div>
+    <p style=" font-weight:bold">Mô tả</p>
+    <p>@sach.Mota</p>
+    
+    
+}
+
