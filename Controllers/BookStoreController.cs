@@ -49,9 +49,5 @@ namespace CuaHangSach.Controllers
                        select s;
             return View(sach);
         }
-        public ActionResult Viewss()
-        {
-            return View();
-        }
     }
 }
